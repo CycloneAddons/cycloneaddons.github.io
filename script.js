@@ -89,22 +89,27 @@ function animate(timeStamp) {
 animate(0);
 
 // text entry.js
+// Get all elements with the class "talkgpt"
+const textElements = document.querySelectorAll(".talkgpt");
 
-const textElement = document.querySelector(".talkgpt");
-const textContent = textElement.innerText;
-textElement.innerText = ""; // Clear the initial text content
+// Iterate over each element and apply the animation
+textElements.forEach(textElement => {
+  const textContent = textElement.innerText;
+  textElement.innerText = ""; // Clear the initial text content
 
-let charIndex = 0;
+  let charIndex = 0;
 
-function animateText() {
-  if (charIndex < textContent.length) {
-    textElement.innerText += textContent.charAt(charIndex);
-    charIndex++;
-    setTimeout(animateText, 10); // Adjust the delay to control the animation speed
+  function animateText() {
+    if (charIndex < textContent.length) {
+      textElement.innerText += textContent.charAt(charIndex);
+      charIndex++;
+      setTimeout(animateText, 10); // Adjust the delay to control the animation speed
+    }
   }
-}
 
-animateText(); // Start the animation when the page loads
+  animateText();
+});
+// Start the animation when the page loads
 
 
 const typingText = document.querySelector("h4 span");
