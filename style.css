@@ -4,6 +4,7 @@
 *{
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 body {
@@ -13,7 +14,7 @@ body {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by most modern browsers */
-
+  overflow: hidden;
   margin: 0px;
   width: 100%;
   min-height: 100%;
@@ -27,12 +28,13 @@ canvas {
   position: fixed;
   top: 0;
   left: 0;
-  width: 101%;
+  width: 100%;
   height: 100%;
   z-index: -1;
 }
 
   main {
+    
     position: absolute; 
     margin: 0px auto;
     padding: 17% 14%;
@@ -47,18 +49,23 @@ canvas {
     
   }
 
+  pre.mobile{
+    display: none;
+  }
 
 pre {
-  
   display: table-header-group;
   color: transparent;
   background-image: linear-gradient(45deg, #00ffa5, #ff7700);
-  font-family: monospace; 
+  font-family: monospace, -webkit-pictograph; 
   font-size: 12px;
   -webkit-background-clip: text;
   margin-bottom: 0;
 }
 
+.transparent-char {
+  opacity: 0; /* Set the opacity for the ░ character */
+}
 
 pre.firt {
   font-size: 6px;
@@ -147,20 +154,26 @@ h4 a.stop-blink {
 
 
 @media (max-width: 48em) {
+ pre.windows {
+display: none;
+  }
+  pre.mobile{
+    display: flow;
+  }
   main {
       padding: 85% 10px;
   }
   pre {
-    font-size: 9px; /* Font size for mobile devices */
+    font-size: 8px; /* Font size for mobile devices */
 }
 pre.firt {
-  font-size: 4px; /* Font size for mobile devices */
+  font-size: 3.5px; /* Font size for mobile devices */
 }
 a {
   left: 20%;
 }
 h4 span{
-  font-size: 15px;
+  font-size: 12px;
   white-space: normal;
 }
 }
